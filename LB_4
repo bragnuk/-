@@ -1,0 +1,55 @@
+import numpy as np
+
+# Розміри матриці
+N, M = 5, 4
+
+# Створюємо випадкову матрицю A
+A = np.random.randint(-10, 10, size=(N, M))
+
+# Обчислення суми абсолютних значень елементів кожного стовпця
+col_sum_abs = np.sum(np.abs(A), axis=0)
+
+# Знаходимо індекс стовпця з максимальною сумою
+max_sum_index = np.argmax(col_sum_abs)
+
+# Знаходимо найменший елемент цього стовпця
+min_element_in_max_sum_column = np.min(A[:, max_sum_index])
+
+print(f"Матриця A:\n{A}")
+print(f"Найменший елемент у стовпці {max_sum_index + 1}, де сума абсолютних значень максимальна: {min_element_in_max_sum_column}")
+
+A1 = np.array([[1, 2], [4, -1]])
+B1 = np.array([[2, -3], [-4, 1]])
+C1 = np.dot(A1, B1) - np.dot(B1, A1)
+print("Завдання 1: C = AB - BA =", C1)
+# Завдання 1
+A1 = np.array([[1, 2], [4, -1]])
+B1 = np.array([[2, -3], [-4, 1]])
+C1 = np.dot(A1, B1) - np.dot(B1, A1)
+print("Завдання 1: C = AB - BA =", C1)
+
+# Завдання 2
+A2 = np.array([[-1, 2], [0, 1]])
+A2_squared = np.linalg.matrix_power(A2, 2)
+print("Завдання 2: A^2 =", A2_squared)
+
+# Завдання 3
+A3 = np.array([[3, 5], [6, -1]])
+B3 = np.array([[2, 1], [-3, 2]])
+C3 = np.dot(A3, B3)
+print("Завдання 3: AB =", C3)
+
+# Завдання 4
+A4 = np.array([[2, 3, 4], [1, 0, 6], [7, 8, 9]])
+det_A4 = np.linalg.det(A4)
+print("Завдання 4: Визначник A =", det_A4)
+
+# Завдання 5
+A5 = np.array([[1, 2, -3], [0, 1, 2], [0, 0, 1]])
+A5_inv = np.linalg.inv(A5)
+print("Завдання 5: Обернена матриця A =", A5_inv)
+
+# Завдання 6
+A6 = np.array([[1, 2, 3, 4], [3, -1, 2, 5], [1, 2, 3, 4], [1, 3, 4, 5]])
+rank_A6 = np.linalg.matrix_rank(A6)
+print("Завдання 6: Ранг матриці =", rank_A6)
