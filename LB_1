@@ -1,0 +1,24 @@
+import numpy as np 
+# Завдання 1: Порівняння точності двох рівностей 
+# sqrt(73) ≈ 8.54 
+# 7/15 ≈ 0.467 
+# Точні значення 
+X1 = np.sqrt(73) # sqrt(73) 
+X2 = 7 / 15 # 7/15 
+# Наближені значення 
+x1_1 = 8.54 
+x2_2 = 0.467 
+# Абсолютні похибки 
+abs_error_x1 = abs(X1 - x1_1) 
+abs_error_x2 = abs(X2 - x2_2) 
+# Відносні похибки 
+rel_error_x1 = abs_error_x1 / abs(X1) 
+rel_error_x2 = abs_error_x2 / abs(X2)
+# Визначення точнішої рівності 
+if rel_error_x1 < rel_error_x2: 
+result = "Перша рівність точніша" 
+precise_error = rel_error_x1 
+else: 
+result = "Друга рівність точніша" 
+precise_error = rel_error_x2 
+rel_error_x1, rel_error_x2, result, precise_error
